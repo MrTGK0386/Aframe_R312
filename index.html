@@ -3,8 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue 360 degrés</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 </head>
 <body>
+    <a-scene>
 
+        <a-assets>
+            <a-asset-item id="star" src="gold_star.glb"></a-asset-item>
+            <img id="sky" src="MarcheNoel.jpg">
+        </a-assets>
+
+        <a-sky src="#sky"></a-sky>
+
+        <a-entity id="Sapin" position="-0.6 1 -6" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 10000;" scale="1.8 1.8 1.8">
+            <a-cylinder id="tronc" radius="0.25" height="1" color="brown" shadow></a-cylinder>
+            <a-entity position="0.006 0.343 0.653" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: #ec404d; emissive: #000000" shadow="" id="Boule-Rouge-0"></a-entity>
+            <a-entity position="-0.215 0.959 0.383" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: yellow; emissive: #000000" shadow="" id="Boule-Rouge-1"></a-entity>
+            <a-entity position="-0.625 0.443 -0.178" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: blue; emissive: #000000" shadow="" id="Boule-Rouge-2"></a-entity>
+            <a-entity position="0.616 0.443 -0. 089" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: yellow; emissive: #000000" shadow="" id="Boule-Rouge-3"></a-entity>
+            <a-entity position="0.314 1.509 -0.030" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: #ec404d; emissive: #000000" shadow="" id="Boule-Rouge-4"></a-entity>
+            <a-entity position="-0.190 0.944 -0.436" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: blue; emissive: #000000" shadow="" id="Boule-Rouge-5"></a-entity>
+            <a-entity position="0.031 0.404 -0.607" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: #ec404d; emissive: #000000" shadow="" id="Boule-Rouge-6"></a-entity>
+            <a-entity position="-0.222 1.746 0.079" geometry="primitive: dodecahedron; radius: 0.17; detail: 1" material="color: yellow; emissive: #000000" shadow="" id="Boule-Rouge-7"></a-entity>
+
+            <a-entity id="ch_star" gltf-model="#star" position="0.006 2.620 0.003" rotation="95.268 0.025 -100.02" scale="2 4.03 2"></a-entity>
+            <a-entity id="Starligth"></a-entity>
+
+            <a-cone  id="feuille" position="0 1 0" radius-bottom=".75" radius-top="0" height="1.75" color="green"></a-cone>
+            <a-cone position="0 1.38029 0" radius-bottom=".75" radius-top="0" height="1.75" color="green" material="" geometry="" id="feuille-2" scale="0.8 0.8 0.8"></a-cone>
+            <a-cone position="0 1.94862 0" radius-bottom=".75" radius-top="0" height="1.75" color="green" material="" geometry="" id="feuille-3" scale="0.6 0.8 0.6"></a-cone>
+        </a-entity>
+
+        <a-entity particle-system="preset: snow; color: #EEE; particleCount: 10000;"></a-entity>
+
+        <a-entity camera="" position="0 1.6 0" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+
+    </a-scene>
 </body>
 </html>
